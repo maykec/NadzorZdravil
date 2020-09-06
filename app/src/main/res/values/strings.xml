@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Nadzornik Zdravil</string>
+    <string name="title_home">Pregled</string>
+    <string name="title_notifications">Obvestila</string>
+
+    <!--    buttons-->
+    <string name="bt_add_medical">Dodaj zdravilo</string>
+    <string name="bt_save_medical">Shrani zdravilo</string>
+
+    <!--    screen titles-->
+    <string name="screen_add_medical_title">Dodajanje zdravila</string>
+
+    <!--    labels-->
+    <string name="lbl_meds_name">Ime zdravila</string>
+    <string name="lbl_meds_schedule">Urnik prejemanja zdravila</string>
+    <string name="lbl_meds_every_day">Vsaki dan</string>
+    <string name="lbl_time_to_take_meds">Ura prejetja zdravila </string>
+</resources>
