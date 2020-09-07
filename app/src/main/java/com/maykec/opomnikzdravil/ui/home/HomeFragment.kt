@@ -22,6 +22,8 @@ import com.maykec.opomnikzdravil.Constants
 import com.maykec.opomnikzdravil.R
 import com.maykec.opomnikzdravil.model.Reminder
 import com.maykec.opomnikzdravil.ui.addMeds.AddMedsActivity
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment(),
     androidx.lifecycle.Observer<ArrayList<Reminder>>,
@@ -54,14 +56,15 @@ class HomeFragment : Fragment(),
         rwEventList.layoutManager = LinearLayoutManager(context)
         rwEventList.setHasFixedSize(true)
 
-        val data = arrayListOf<Reminder>()
-        data.add(Reminder(medsName="zdravilo 4", timeToTake="13:2", takeEveryDay=true, id="-MGXrSLDBRb9NyZZUSh7"))
-
-        homeViewModel.loadEvents()
+        // set observer for events
         homeViewModel.eventList.observe(viewLifecycleOwner, this)
 
-
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        homeViewModel.loadEvents()
     }
 
     private fun openAddNewMedicationActivity() {
@@ -73,6 +76,7 @@ class HomeFragment : Fragment(),
 
     override fun onChanged(data: ArrayList<Reminder>?) {
         if (data != null && data.size > 0) {
+            data.reverse() // reverse array list to show most recently added reminders on top
             medsListAdapter = MedsListAdapter(data)
             rwEventList.adapter = medsListAdapter
         }

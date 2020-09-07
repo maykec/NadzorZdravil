@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
-    android:orientation="vertical"
-    android:background="@color/colorAccent">
+    android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rw_events_list"
@@ -15,13 +14,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bt_dodaj_zdravilo"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="170px"
-        android:visibility="gone"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/bt_dodaj_zdravilo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bt_add_medical"/>
+        android:text="@string/bt_add_medical"
+        app:layout_constraintBottom_toBottomOf="@id/rw_events_list"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

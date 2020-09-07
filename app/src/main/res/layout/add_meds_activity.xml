@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="20px">
 
@@ -11,44 +11,70 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_meds_name" />
+        android:text="@string/lbl_meds_name"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/et_meds_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"/>
 
     <TextView
         android:id="@+id/lbl_meds_schedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_meds_schedule" />
+        android:text="@string/lbl_meds_schedule"
+        android:textSize="20sp"
+        android:layout_marginBottom="15px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_meds_name"/>
 
     <CheckBox
         android:id="@+id/cb_evey_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lbl_meds_every_day"
-        android:checked="true"/>
+        android:checked="true"
+        android:textSize="16sp"
+        android:layout_marginBottom="10px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_meds_schedule"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_time_to_take_meds" />
+        android:text="@string/lbl_time_to_take_meds"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_evey_day"/>
 
     <TimePicker
         android:id="@+id/meds_time_picker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2"/>
 
     <Button
         android:id="@+id/bt_save_meds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bt_save_medical" />
+        android:text="@string/bt_save_medical"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

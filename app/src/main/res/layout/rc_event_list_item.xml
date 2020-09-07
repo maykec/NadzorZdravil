@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10px">
+    android:layout_margin="10px"
+    android:padding="20px"
+    android:background="@drawable/list_item_cell">
 
     <TextView
         android:id="@+id/tv_meds_name"
@@ -17,17 +19,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <CheckBox
+        <TextView
             android:id="@+id/cb_evey_day_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_meds_every_day"/>
+            android:text="@string/lbl_meds_every_day_at"/>
 
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp">
+            android:textSize="16sp"
+            android:layout_marginLeft="15px">
         </TextView>
     </LinearLayout>
 

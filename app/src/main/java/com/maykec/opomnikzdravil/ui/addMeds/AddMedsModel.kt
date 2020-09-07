@@ -15,22 +15,25 @@ class AddMedsModel : ViewModel() {
         const val TAG = "AddMedsModel"
     }
 
+    private var database = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_DATA_BASE_NAME)
+
     val medsName = MutableLiveData<String>()
-    val takeEveryDay = MutableLiveData<Boolean>()
+    val takeEveryDay = MutableLiveData<Boolean>(true) // default value
     val timeToTake = MutableLiveData<String>()
     val validInput = MutableLiveData<Boolean>()
+    val storeStatus = MutableLiveData<Boolean>(false) // helper variable to notify activity when event was added to firebasee
 
     fun saveMedsToFirebase() {
-        var database = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_DATA_BASE_NAME)
         val reminderId = database.push().key as String
         val reminder = Reminder(id= reminderId, medsName = this.medsName.value!!, takeEveryDay = this.takeEveryDay.value!!, timeToTake = this.timeToTake.value!!)
         database.child(reminderId).setValue(reminder).addOnCompleteListener {
-            Log.d(TAG, "addOnCompleteListener(): Stored to firebase" + reminderId)
+            storeStatus.value = true
         }
     }
 
     fun setTimeToTake(hour: Int, minute: Int) {
         timeToTake.value = hour.toString() + ":" + minute.toString() //TODO not best solution
+        // should store as datetim format, but for simplicity
     }
 
     fun setTakeEveryDay(takeEveryDay: Boolean) {

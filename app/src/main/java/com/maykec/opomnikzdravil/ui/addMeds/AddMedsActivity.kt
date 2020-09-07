@@ -17,7 +17,7 @@ import java.util.*
 class AddMedsActivity : AppCompatActivity(),
     TimePicker.OnTimeChangedListener,
     CompoundButton.OnCheckedChangeListener,
-    TextView.OnEditorActionListener, androidx.lifecycle.Observer<Boolean>,
+    TextView.OnEditorActionListener,
     View.OnClickListener{
     companion object {
         const val TAG = "AddMedsActivity"
@@ -51,8 +51,20 @@ class AddMedsActivity : AppCompatActivity(),
         btSaveMeds.setOnClickListener(this)
 
         //prevent storing meds with no name
-        model.validInput.observe(this, this)
+        model.validInput.observe(this, validationObserver)
+        model.storeStatus.observe(this, statusObserver)
+    }
 
+    // Observer functions
+    private val statusObserver = Observer<Boolean> {
+        if (it) {
+            Toast.makeText(baseContext, baseContext.getString(R.string.toast_event_saved), Toast.LENGTH_LONG).show()
+            finish()
+        }
+    }
+
+    private val validationObserver = Observer<Boolean> {
+        btSaveMeds.isEnabled = it
     }
 
     override fun onTimeChanged(view: TimePicker?, hour: Int, minute: Int) {
@@ -66,10 +78,6 @@ class AddMedsActivity : AppCompatActivity(),
     override fun onEditorAction(view: TextView?, actionId: Int, keyEvent: KeyEvent?): Boolean {
         model.setMedsName(view!!.text.toString())
         return false
-    }
-
-    override fun onChanged(isValidated: Boolean?) {
-        btSaveMeds.isEnabled = isValidated!!
     }
 
     override fun onClick(button: View?) {

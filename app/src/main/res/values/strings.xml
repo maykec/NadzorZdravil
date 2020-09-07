@@ -15,4 +15,11 @@
     <string name="lbl_meds_schedule">Urnik prejemanja zdravila</string>
     <string name="lbl_meds_every_day">Vsaki dan</string>
     <string name="lbl_time_to_take_meds">Ura prejetja zdravila </string>
+    <string name="lbl_meds_every_day_at">Vsaki dan ob</string>
+    <string name="lbl_meds_not_received">Zdravilo ni bilo prejeto!</string>
+    <string name="lbl_meds_received">Zdravilo je bilo prejeto!</string>
+    <string name="lbl_meds_received_late">Zdravilo je bilo prejeto s %d min zamudo!</string>
+
+    <!--Toasts-->
+    <string name="toast_event_saved">Opomnik je uspešno nastavljen</string>
 </resources>

@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="purpleLight">#EDE7F6</color>
+    <color name="alert">#f50057</color>
+    <color name="success">#4caf50</color>
+    <color name="warning">#ff9800</color>
 </resources>

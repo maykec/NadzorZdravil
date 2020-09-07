@@ -11,7 +11,7 @@ import com.maykec.opomnikzdravil.Constants
 import com.maykec.opomnikzdravil.model.Reminder
 
 class HomeViewModel : ViewModel() {
-    var database = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_DATA_BASE_NAME)
+    private var database = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_DATA_BASE_NAME)
     var eventList = MutableLiveData<ArrayList<Reminder>>()
 
     fun loadEvents() {
