@@ -9,3 +9,20 @@ Aplikacija je sestavljena iz treh zaslonov
 ![](https://raw.githubusercontent.com/maykec/NadzorZdravil/master/blob/home.png)
 
 Na tem zaslonu je prikazan seznam opomnikov za zdravila. Vsak element v seznamu je ime zdravila in čas ob katerem je potrebno zdravilo vzeti.
+
+### Zaslon Obvestila
+![](https://raw.githubusercontent.com/maykec/NadzorZdravil/master/blob/notifications.png)
+
+Prikazuje seznam že sproženih obvestil iz servisne aplikacije. Vsak element v seznamu prikazuje ime zdravila in kdaj/če/s kolikšno zamudo je bil prejem zdravila potrjen. (Uporabnk je potrdil obvestilo v servisni aplikaciji)
+
+### Zaslon Dodajanje Zdravila
+![](https://raw.githubusercontent.com/maykec/NadzorZdravil/master/blob/add_event.png)
+
+Zaslon za dodajanje novega zdravila. Uporabnik nastavi ime zdravila in čas jemanja zdravila. Obvestila se bodo zaradi preprostosti sprožala vsaki dan. 
+
+
+## Zagon aplikacje
+Aplikacijo je potrebbo odpreti v Android Studio
+
+1. `git clone https://github.com/maykec/NadzorZdravil.git`
+2. Potrebno je imeti konfiguriran Google Firebase račun
